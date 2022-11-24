@@ -1,0 +1,9 @@
+{
+	"name": "socialcard.sh",
+	"version": "1.0.0",
+	"description": "An app which allows you to create links to your social media or website.",
+	"repository": "git@github.com:nyxfor13days/socialcard.sh.git",
+	"author": "Nyx <nyxfor13days@gmail.com>",
+	"license": "MIT",
+	"private": true
+}
