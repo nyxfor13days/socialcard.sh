@@ -1,26 +1,34 @@
 {
-	"name": "socialcard.sh",
-	"version": "1.0.0",
-	"description": "An app which allows you to create links to your social media or website.",
-	"repository": "git@github.com:nyxfor13days/socialcard.sh.git",
-	"author": "Nyx <nyxfor13days@gmail.com>",
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"license": "MIT",
-	"private": true,
-	"dependencies": {
-		"next": "^13.0.5",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@types/node": "^18.11.9",
-		"@types/react": "^18.0.25",
-		"@types/react-dom": "^18.0.9",
-		"typescript": "^4.9.3"
-	}
+  "name": "socialcard.sh",
+  "version": "1.0.0",
+  "description": "An app which allows you to create links to your social media or website.",
+  "repository": "git@github.com:nyxfor13days/socialcard.sh.git",
+  "author": "Nyx <nyxfor13days@gmail.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "next": "^13.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-config-next": "^13.0.5",
+    "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
+  }
 }
