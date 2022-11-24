@@ -24,6 +24,9 @@ module.exports = {
         primary: colors.emerald[400],
         onPrimary: colors.zinc[900],
       }),
+      fontFamily: {
+        mono: ["--font-JetBrainsMono", "monospace"],
+      },
       spacing: {
         xs: "0.25rem",
         sm: "0.5rem",
