@@ -22,7 +22,11 @@ module.exports = {
         surfaceVariant: colors.zinc[300],
         onSurfaceVariant: colors.zinc[900],
         primary: colors.emerald[400],
-        onPrimary: colors.zinc[900],
+        onPrimary: colors.emerald[900],
+        error: colors.rose[400],
+        onError: colors.rose[900],
+        success: colors.green[400],
+        onSuccess: colors.green[900],
       }),
       fontFamily: {
         mono: ["--font-JetBrainsMono", "monospace"],
