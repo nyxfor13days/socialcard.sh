@@ -19,5 +19,7 @@ jobs:
         run: yarn format:fix
       - name: Commit the changes
         run: |
+          git config --local user.email "nyxfor13days@gmail.com"
+          git config --local user.name "nyxfor13days"
           git add -A .
           git commit -m "Format the files"
