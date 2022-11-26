@@ -1,0 +1,30 @@
+name: format
+run-name: Formatting the files in the commit before merging.
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: yarn install
+      - name: Format the files
+        run: yarn format:fix
+      - name: Commit the changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Format the files"
+          commit_options: "--no-verify"
+          commit_user_name: "GitHub Actions"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+          file_pattern: "**/*.{js,jsx,ts,tsx,json,css,scss,md}"
