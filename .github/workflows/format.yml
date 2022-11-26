@@ -3,13 +3,15 @@ run-name: Formatting the files in the commit before merging.
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: [master]
 
 jobs:
   format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@v1
         with:
           node-version: 18
@@ -18,8 +20,11 @@ jobs:
       - name: Format the files
         run: yarn format:fix
       - name: Commit the changes
-        run: |
-          git config --local user.email "nyxfor13days@gmail.com"
-          git config --local user.name "nyxfor13days"
-          git add -A .
-          git commit -m "Format the files"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Format the files"
+          commit_options: "--no-verify"
+          commit_user_name: "GitHub Actions"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+          file_pattern: "**/*.{js,jsx,ts,tsx,json,css,scss,md}"
